@@ -30,6 +30,9 @@ import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
 
+import Font from '@ckeditor/ckeditor5-font/src/font';
+import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
+
 export default class ClassicEditor extends ClassicEditorBase {}
 
 // Plugins to include in the build.
@@ -56,13 +59,17 @@ ClassicEditor.builtinPlugins = [
 	PasteFromOffice,
 	Table,
 	TableToolbar,
-	TextTransformation
+	TextTransformation,
+	Font,
+	Alignment
 ];
 
 // Editor configuration.
 ClassicEditor.defaultConfig = {
 	toolbar: {
 		items: [
+			'font',
+			'fontSize',
 			'heading',
 			'|',
 			'bold',
@@ -70,6 +77,11 @@ ClassicEditor.defaultConfig = {
 			'link',
 			'bulletedList',
 			'numberedList',
+			'|',
+			'justifyLeft',
+			'justifyCenter',
+			'justifyRight',
+			'justifyBlock',
 			'|',
 			'indent',
 			'outdent',
